@@ -1,0 +1,14 @@
+[Unit]
+Description=Louvre Hotels API service
+
+[Service]
+ExecStart=/usr/bin/dotnet LH.Common.WebApi.dll
+WorkingDirectory=/home/azureadmin/apps/WebApi/
+User=dotnetuser
+Group=dotnetuser
+Restart=on-failure
+SyslogIdentifier=louvre-hotels-api-dotnet
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
